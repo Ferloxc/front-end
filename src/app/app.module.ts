@@ -29,7 +29,7 @@ import { RegisterComponent } from './components/register/register.component';
         providers: [
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('253755267445240')
+            provider: new FacebookLoginProvider('2517977091689724')
           }
         ],
         onError: (err) => {

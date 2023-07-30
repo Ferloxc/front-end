@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit{
   
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
+    
   }
 
   signOut(): void {
@@ -26,6 +27,7 @@ export class LoginComponent implements OnInit{
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
+      console.log(this.user)
     });
   }
 
