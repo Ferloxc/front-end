@@ -8,7 +8,7 @@
 </div>
 
 <!-- Formulario de inicio de sesión -->
-<div class="login-container">
+<div class="login-container" *ngIf="!loggedIn">
   <div class="formContainer">
     <form>
       <h2>Login</h2>
@@ -24,4 +24,16 @@
     </form>
     <button (click)="signInWithFB()" type="submit">Facebook</button>
   </div>
+</div>
+
+
+<div *ngIf="loggedIn">
+
+  <img src="{{ user.response.picture.data.url }}">
+<div>
+  <h4>{{ user.name }}</h4>
+  <p>{{ user.email }}</p>
+</div>
+
+
 </div>
