@@ -1,7 +1,6 @@
 import { Component,ViewEncapsulation  } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
-
 @Component({
   selector: 'app-coding',
   templateUrl: './coding.component.html',
@@ -20,6 +19,4 @@ export class CodingComponent {
     const html = `<html><head><style>${this.cssCode}</style></head><body>${this.htmlCode}<script>${this.jsCode}</script></body></html>`;
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
-
-
 }
