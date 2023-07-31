@@ -1,69 +1,184 @@
-/* landing.component.css */
+$color-background: #222831;
+$color-primary: #393E46;
+$color-accent: #00ADB5;
+$color-text: #EEEEEE;
+$color-secondary: #103436;
 
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  color: $color-text;
+  margin: 0;
+  padding: 0;
+  background-color: $color-background;
+}
+
+/* Estilos para la barra de navegación */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #007BFF;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  li {
-    margin-right: 20px;
-  }
-  
+  background-color: $color-primary;
+  padding: 10px;
+
   a {
     text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    color: $color-text;
+    margin-right: 20px;
   }
-  
-  a:hover {
-    color: #ccc;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
   }
-  
-  .landing-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 40px);
+
+  li {
+    display: inline;
   }
-  
-  h2 {
+}
+
+/* Estilos para el encabezado */
+.landing-page__header {
+  background-color: $color-accent;
+  color: $color-text;
+  text-align: center;
+  padding: 50px 0;
+
+  h1 {
     font-size: 36px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
-  
+
   p {
     font-size: 18px;
-    max-width: 500px;
-    text-align: center;
-    color: #333;
+    color: $color-text;
   }
-  
-  .cta-button {
-    margin-top: 30px;
-    padding: 12px 24px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+}
+
+/* Estilos para la sección de características */
+.landing-page__features {
+  background-color: $color-primary;
+  padding: 50px 0;
+  text-align: center;
+
+  .features-title {
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: $color-text;
+    }
+
+    p {
+      font-size: 16px;
+      color: $color-text;
+      margin-bottom: 30px;
+    }
   }
-  
-  .cta-button:hover {
-    background-color: #0056b3;
+
+  .features-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+
+    .feature-card {
+      background-color: $color-background;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      color: $color-text;
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: $color-accent;
+      }
+
+      p {
+        font-size: 16px;
+        color: $color-text; /* Cambiado a color de texto */
+      }
+    }
   }
-  
+}
+
+/* Estilos para la sección de planes de pago */
+.landing-page__plans {
+  background-color: $color-accent;
+  color: $color-text;
+  padding: 50px 0;
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: $color-text;
+  }
+
+  .plans-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .plan-card {
+      background-color: $color-background;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 20px;
+      flex: 1;
+      max-width: 300px;
+      color: $color-text;
+
+      h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: $color-accent;
+      }
+
+      p {
+        font-size: 16px;
+        color: $color-text; /* Cambiado a color de texto */
+      }
+
+      .plan-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+        color: $color-text; /* Cambiado a color de texto */
+
+        li {
+          font-size: 14px;
+          margin-bottom: 5px;
+        }
+      }
+
+      .plan-price {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: $color-accent;
+      }
+
+      .cta-button {
+        display: block;
+        background-color: $color-accent;
+        color: $color-text;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: $color-primary;
+        }
+      }
+    }
+  }
+}
+
+/* Estilos para el pie de página */
+footer {
+  background-color: $color-primary;
+  padding: 20px;
+  text-align: center;
+  color: $color-text;
+}

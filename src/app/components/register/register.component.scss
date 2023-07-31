@@ -1,9 +1,41 @@
+// Variables
+$primary-bg-color: #222831;
+$secondary-bg-color: #393E46;
+$accent-color: #00ADB5;
+$text-color: #EEEEEE;
+$button-hover-color: #103436;
+
+//* Estilos para la barra de navegación */
+.navbar {
+  background-color: $primary-bg-color;
+  padding: 10px;
+
+  a {
+    text-decoration: none;
+    color: $text-color;
+    margin-right: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+  }
+
+  li {
+    display: inline;
+  }
+}
+
+
+
 .register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: $primary-bg-color;
 }
 
 form {
@@ -13,7 +45,7 @@ form {
   gap: 20px;
   width: 350px;
   padding: 30px;
-  background-color: #fff;
+  background-color: $secondary-bg-color;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -21,7 +53,7 @@ form {
 h2 {
   font-size: 32px;
   font-weight: bold;
-  color: #333;
+  color: $accent-color;
 }
 
 .form-group {
@@ -33,21 +65,23 @@ h2 {
 label {
   font-size: 16px;
   font-weight: bold;
-  color: #555;
+  color: $text-color;
 }
 
 input {
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid $text-color;
   border-radius: 5px;
   width: 90%;
   font-size: 16px;
+  color: $text-color;
+  background-color: $secondary-bg-color;
 }
 
 button {
   padding: 14px 28px;
-  background-color: #007BFF;
-  color: #fff;
+  background-color: $accent-color;
+  color: $text-color;
   border: none;
   border-radius: 30px;
   font-size: 18px;
@@ -56,5 +90,5 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: $button-hover-color;
 }

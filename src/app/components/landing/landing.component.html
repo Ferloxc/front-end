@@ -1,18 +1,105 @@
 <div class="navbar">
-    <a routerLink="/">Logo</a>
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/login">Login</a></li>
-      <li><a routerLink="/register">Register</a></li>
-      <li><a routerLink="/code">Code</a></li>
-    </ul>
+  <a routerLink="/">Logo</a>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/register">Register</a></li>
+    <li><a routerLink="/code">Code</a></li>
+  </ul>
 </div>
 
-<div class="landing-container">
-  <h2>Welcome to our Landing Page!</h2>
-  <p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus temporibus excepturi, veniam distinctio vel fugiat officia perferendis, laboriosam a nam voluptates odio hic quos, suscipit consequatur libero iusto aut. Itaque!
-  </p>
-  <button class="cta-button" routerLink="/code">Get Started</button>
-</div>
+<div class="landing-page">
+<header class="landing-page__header">
+  <h1>CodeRender</h1>
+  <p>Renderiza tu código en tiempo real</p>
+</header>
+
+<section class="landing-page__features">
+  <div class="features-title">
+    <h2>Características destacadas</h2>
+    <p>¡Bienvenido a Coderender! La herramienta definitiva para todos los desarrolladores y entusiastas del código...</p>
+  </div>
   
+   <div class="features-cards">
+    <!-- Característica 1 -->
+    <div class="feature-card">
+      <h3>Renderización en tiempo real</h3>
+      <p>Olvídate de cambiar entre pestañas o ventanas para ver los cambios. Con Coderender, cada vez que realices una modificación en tu código HTML, CSS o JavaScript, la vista previa se actualizará de inmediato en la misma página. ¡Así podrás ver cómo lucirá tu proyecto mientras trabajas en él!</p>
+    </div>
+
+    <!-- Característica 2 -->
+    <div class="feature-card">
+      <h3>Previsualización instantánea</h3>
+      <p>Mira cómo lucirá tu sitio web mientras escribes el código. Coderender te proporciona una previsualización en tiempo real de tu proyecto, lo que te permite ajustar y mejorar el diseño de forma más eficiente y efectiva.</p>
+    </div>
+
+    <!-- Característica 3 -->
+    <div class="feature-card">
+      <h3>Editor de código enriquecido</h3>
+      <p>Nuestro potente editor resalta la sintaxis y ofrece sugerencias inteligentes para facilitar la escritura de código. Con características como el autocompletado y el resaltado de errores, escribir código limpio y eficiente nunca ha sido tan sencillo.</p>
+    </div>
+
+    <!-- Característica 4 -->
+    <div class="feature-card">
+      <h3>Guardado automático</h3>
+      <p>No te preocupes por perder tu progreso. Coderender realiza un guardado automático de tus proyectos en tiempo real, lo que significa que cada cambio que hagas se guardará automáticamente para que puedas retomar tu trabajo justo donde lo dejaste, incluso si cierras la página o el navegador.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-page__plans">
+  <h2>Planes de pago</h2>
+  <div class="plans-container">
+      
+    <!-- Planes de pago -->
+    <div class="plans-section">
+      <div class="plans-container">
+        <div class="plan-card">
+          <h3>Plan Gratuito</h3>
+          <p class="plan-description">Renderización instantánea en la misma página</p>
+          <ul class="plan-features">
+            <li>Editor de código básico</li>
+            <li>Hasta 3 proyectos guardados</li>
+            <li>Soporte por correo electrónico</li>
+          </ul>
+          <div class="plan-price">GRATIS</div>
+          <a routerLink="/register" class="cta-button">Regístrate</a>
+        </div>
+
+        <div class="plan-card">
+          <h3>Plan Pro</h3>
+          <p class="plan-description">Todo incluido en el Plan Gratuito</p>
+          <ul class="plan-features">
+            <li>Editor de código avanzado</li>
+            <li>Renderización en pantalla completa</li>
+            <li>Navegación sin publicidad</li>
+            <li>Hasta 15 proyectos guardados</li>
+            <li>Soporte prioritario por correo electrónico</li>
+          </ul>
+          <div class="plan-price">$19.99/mes</div>
+          <a routerLink="/register" class="cta-button">Suscríbete</a>
+        </div>
+
+        <div class="plan-card">
+          <h3>Plan Premium</h3>
+          <p class="plan-description">Todo incluido en el Plan Pro</p>
+          <ul class="plan-features">
+            <li>Colaboración en tiempo real con otros usuarios</li>
+            <li>Acceso a bibliotecas y plantillas adicionales</li>
+            <li>Prioridad máxima de renderización</li>
+            <li>Proyectos ilimitados guardados</li>
+            <li>Soporte telefónico 24/7</li>
+          </ul>
+          <div class="plan-price">$49.99/mes</div>
+          <a routerLink="/register" class="cta-button">Suscríbete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- Pie de página -->
+<footer>
+<p>Contacto | Redes sociales | Política de privacidad | Derechos reservados</p>
+</footer>
