@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="box">
+      <label>HTML</label>
+      <textarea [(ngModel)]="htmlCode"></textarea>
+    </div>
+  
+    <div class="box">
+      <label>CSS</label>
+      <textarea [(ngModel)]="cssCode"></textarea>
+    </div>
+  
+    <div class="box">
+      <label>JavaScript</label>
+      <textarea [(ngModel)]="jsCode"></textarea>
+    </div>
+</div>
+  
+<div class="preview-container">
+    <h3>Preview</h3>  
+    <div class="preview">
+      <iframe [srcdoc]="getIframeContent()" sandbox="allow-scripts"></iframe>
+    </div>
+</div>
+  
