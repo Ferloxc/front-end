@@ -11,6 +11,7 @@ import { LandingComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CodingComponent } from './components/coding/coding.component';
+import { SnippetComponent } from './components/snippet/snippet.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CodingComponent } from './components/coding/coding.component';
     LandingComponent,
     RegisterComponent,
     CodingComponent,
+    SnippetComponent,
   ],
   imports: [
     BrowserModule,

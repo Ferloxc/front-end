@@ -1,0 +1,35 @@
+<div class="coding-container">
+    <div class="navbar">
+      <a routerLink="/">Logo</a>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+      </ul>
+    </div>
+  
+    <div class="coding-snippet">
+      <div class="snippet-inputs">
+        <label for="language">Language:</label>
+        <select id="language" [(ngModel)]="selectedLanguage">
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="javascript">JavaScript</option>
+        </select>
+  
+        <label for="code">Code:</label>
+        <textarea id="code" [(ngModel)]="snippetCode"></textarea>
+  
+        <button (click)="addSnippet()">Add</button>
+      </div>
+  
+      <div class="snippet-list">
+        <h3>Snippets</h3>
+        <ul>
+          <li *ngFor="let snippet of snippets" class="snippet-item">
+            <div class="language">{{ snippet.language }}</div>
+            <pre class="code">{{ snippet.code }}</pre>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

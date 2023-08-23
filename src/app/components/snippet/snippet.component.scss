@@ -1,0 +1,106 @@
+$primary-bg-color: #222831;
+$accent-color: #00ADB5;
+$text-color: #EEEEEE;
+
+.coding-container {
+
+  .navbar {
+    background-color: $primary-bg-color;
+    padding: 10px;
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+      margin-right: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: inline-block;
+
+      li {
+        display: inline;
+        margin-right: 10px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .coding-snippet {
+    padding: 20px;
+    background-color: $primary-bg-color;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    .snippet-inputs {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+
+      label {
+        margin-top: 5px;
+        color: $text-color;
+        font-size: 0.9rem;
+      }
+
+      select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 3px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+
+      button {
+        padding: 8px 15px;
+        background-color: $accent-color;
+        border: none;
+        color: #FFFFFF;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($accent-color, 10%);
+        }
+      }
+    }
+
+    .snippet-list {
+      h3 {
+        margin-top: 20px;
+        color: $text-color;
+        font-size: 1.2rem;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        
+        .snippet-item {
+          margin-top: 20px;
+          border: 1px solid #ccc;
+          padding: 15px;
+          border-radius: 8px;
+          background-color: $primary-bg-color;
+          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+
+          .language {
+            color: $accent-color;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+
+          .code {
+            white-space: pre-wrap;
+            color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}
