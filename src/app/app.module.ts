@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CodingComponent } from './components/coding/coding.component';
 import { SnippetComponent } from './components/snippet/snippet.component';
+import { ManagerComponent } from './components/manager/manager.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SnippetComponent } from './components/snippet/snippet.component';
     RegisterComponent,
     CodingComponent,
     SnippetComponent,
+    ManagerComponent,
   ],
   imports: [
     BrowserModule,

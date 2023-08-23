@@ -1,0 +1,16 @@
+<div class="navbar">
+  <a routerLink="/">Logo</a>
+  <ul>
+    <li><a routerLink="/">Home</a></li>
+  </ul>
+</div>
+
+<div class="project-manager">
+  <h2>Your Projects</h2>
+  <ul class="project-list">
+    <li *ngFor="let project of projects" (click)="openProject(project)">
+      <i class="fas fa-folder"></i>
+      {{ project.name }}
+    </li>
+  </ul>
+</div>
