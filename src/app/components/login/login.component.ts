@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { SocialAuthService, SocialUser } from "@abacritt/angularx-social-login";
-import { FacebookLoginProvider } from "@abacritt/angularx-social-login";
+import { AuthService } from '../../services/auth/auth.service';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,27 +10,29 @@ import { FacebookLoginProvider } from "@abacritt/angularx-social-login";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit{
-
-  user: SocialUser;
-  loggedIn: boolean;
-
-  constructor(private authService: SocialAuthService) { }
   
-  signInWithFB(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-    
-  }
+  loggedIn: boolean;
+  signInForm = this.formBuilder.group({
+    username: '',
+    password: ''
+  });
 
-  signOut(): void {
-    this.authService.signOut();
-  }
+  constructor(
+    private authService: AuthService, 
+    private formBuilder: FormBuilder, 
+    private router: Router
+  ) {}
 
-  ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      console.log(this.user)
+  ngOnInit(): void {
+    this.authService.isAuthenticated().subscribe(res => {
+      if (res && res.uid) {
+        this.router.navigate(['/']);
+      }
     });
   }
 
+  onSubmit(): void {
+    var login = this.signInForm.value;
+    this.authService.SignIn(login.username!, login.password!);
+  }
 }

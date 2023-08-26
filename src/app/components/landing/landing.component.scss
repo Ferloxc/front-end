@@ -37,19 +37,38 @@ body {
 
 /* Estilos para el encabezado */
 .landing-page__header {
-  background-color: $color-accent;
-  color: $color-text;
+  // background-color: $color-accent;
+  // color: $color-text;
+  // text-align: center;
+  // padding: 50px 0;
+
+  background-color: #fff;
+  color: #EEEEEE;
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 90px;
+  height: 420px;
+  color: #00ADB5;
+  text-align: right;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  align-content: stretch;
+  flex-wrap: wrap;
+  flex-direction: column;
 
   h1 {
     font-size: 36px;
     margin-bottom: 10px;
+    font-family: monospace;
+    font-weight: 400;
   }
 
   p {
+    // font-size: 18px;
+    // color: $color-text;
+
     font-size: 18px;
-    color: $color-text;
+    color: #797979;
   }
 }
 

@@ -1,8 +1,5 @@
-<div class="navbar">
-  <a routerLink="/">Logo</a>
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-  </ul>
+<div class="container-buttons">
+  <button class="run-button" (click)="Run()">Run</button>
 </div>
 
 <div class="container">
@@ -23,7 +20,7 @@
 </div>
   
 <div class="preview-container">
-    <h3>Preview</h3>  
+    <label>Preview</label>
     <div class="preview">
       <iframe [srcdoc]="getIframeContent()" sandbox="allow-scripts"></iframe>
     </div>

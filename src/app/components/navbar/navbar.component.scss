@@ -1,0 +1,36 @@
+$primary-bg-color: #393E46;
+$secondary-bg-color: #393E46;
+$accent-color: #00ADB5;
+$text-color: #EEEEEE;
+$button-hover-color: #103436;
+
+.navbar {
+    background-color: $primary-bg-color;
+    padding: 10px;
+  
+    a {
+      text-decoration: none;
+      color: $text-color;
+      margin-right: 20px;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      display: inline-block;
+    }
+  
+    li {
+      display: inline;
+    }
+
+    button {
+      background: #00ADB5;
+      color: white;
+      font-family: monospace;
+      border: none;
+      border-radius: 2px;
+      padding: 5px 10px;
+    }
+  }
+

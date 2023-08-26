@@ -7,36 +7,14 @@ $accent-color: #00ADB5;
 $text-color: #EEEEEE;
 $button-hover-color: #103436;
 
-//* Estilos para la barra de navegación */
-.navbar {
-  background-color: $primary-bg-color;
-  padding: 10px;
-
-  a {
-    text-decoration: none;
-    color: $text-color;
-    margin-right: 20px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-  }
-
-  li {
-    display: inline;
-  }
-}
-
 /* Estilos del formulario de inicio de sesión */
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: $primary-bg-color;
+  height: 90%;
+  background-color: #fff;
 
   .formContainer {
     display: flex;
@@ -48,6 +26,7 @@ $button-hover-color: #103436;
     background-color: $secondary-bg-color;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    font-family: monospace;
 
     form {
       display: flex;
@@ -56,12 +35,14 @@ $button-hover-color: #103436;
       gap: 20px;
       background-color: $secondary-bg-color;
       border-radius: 10px;
+      padding: 20px 25px;
     }
 
     h2 {
       font-size: 32px;
       font-weight: bold;
       color: $accent-color;
+      font-family: monospace;
     }
 
     .form-group {
@@ -73,13 +54,14 @@ $button-hover-color: #103436;
         font-size: 16px;
         font-weight: bold;
         color: $text-color;
+        margin-bottom: 10px;
       }
 
       input {
         padding: 12px;
         border: 1px solid $text-color;
         border-radius: 5px;
-        width: 90%;
+        width: 100%;
         font-size: 16px;
         color: $text-color;
         background-color: $secondary-bg-color;
@@ -88,16 +70,17 @@ $button-hover-color: #103436;
 
     button {
       padding: 14px 28px;
-      background-color: $accent-color;
-      color: $text-color;
+      background-color: #ffffff;
+      color: #00adb5;
       border: none;
-      border-radius: 30px;
+      border-radius: 5px;
       font-size: 18px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      font-family: monospace;
 
       &:hover {
-        background-color: $button-hover-color;
+        background-color: #e9e9e9;
       }
     }
   }

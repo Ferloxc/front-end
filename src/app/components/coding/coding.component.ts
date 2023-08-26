@@ -13,10 +13,30 @@ export class CodingComponent {
   cssCode: string = '';
   jsCode: string = '';
 
-  constructor(private sanitizer: DomSanitizer) {}
+   output = `<html>
+                    <style>
+                    .body {
+                      background-color: #000;
+                    }
+                    </style>
+                    <body>
+                      <h1 style="color: white;"></h1>
+                    <script type="text/javascript">
+                    </script>
+                    </body>
+                  </html>`
+
+  outputRun = "";
+
+  constructor(private sanitizer: DomSanitizer) {
+  }
 
   getIframeContent(): SafeHtml {
-    const html = `<html><head><style>${this.cssCode}</style></head><body>${this.htmlCode}<script>${this.jsCode}</script></body></html>`;
+    const html = this.outputRun;
     return this.sanitizer.bypassSecurityTrustHtml(html);
+  }
+
+  Run() {
+    this.outputRun = `<html><head><style>${this.cssCode}</style></head><body>${this.htmlCode}<script>${this.jsCode}</script></body></html>`;
   }
 }
