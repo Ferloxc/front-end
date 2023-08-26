@@ -11,7 +11,7 @@ import {
 import { User } from '../../../models/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   public userData: any;
@@ -20,9 +20,10 @@ export class AuthService {
     private firestore: AngularFirestore,
     private firebaseAuth: AngularFireAuth,
     private router: Router
-  ) { 
+  ) {
     firebaseAuth.onAuthStateChanged((user) => {
       if (user) {
+        console.log(user);
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user')!);
@@ -34,27 +35,27 @@ export class AuthService {
   }
 
   FacebookAuth() {
-    return this.AuthLogin(new FacebookAuthProvider()); 
+    return this.AuthLogin(new FacebookAuthProvider());
   }
 
-  AuthLogin (provider: FacebookAuthProvider) {
+  AuthLogin(provider: FacebookAuthProvider) {
     return this.firebaseAuth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);        
+        console.log(result);
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
-  userLoggued(): Promise <boolean> {
-    return new Promise( async ( resolve, rejects ) => {
-      await this.firebaseAuth.onAuthStateChanged( (user) => {
-        if ( user ) {
-          resolve( true );
+  userLoggued(): Promise<boolean> {
+    return new Promise(async (resolve, _rejects) => {
+      await this.firebaseAuth.onAuthStateChanged((user) => {
+        if (user) {
+          resolve(true);
         } else {
-          resolve( false );
+          resolve(false);
         }
       });
     });
@@ -68,7 +69,7 @@ export class AuthService {
       })
       .catch((error) => {
         console.log(error);
-      })
+      });
   }
 
   SignUp(email: string, password: string, firstName: string, lastName: string) {
@@ -102,7 +103,7 @@ export class AuthService {
       displayName: user.displayName,
       emailVerified: user.emailVerified,
       firstName: firstName,
-      lastName: lastName
+      lastName: lastName,
     };
     return userRef.set(userData, {
       merge: true,
@@ -117,6 +118,6 @@ export class AuthService {
     this.firebaseAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['login']);
-    });   
+    });
   }
 }

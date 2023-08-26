@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login';
 import { FacebookLoginProvider } from '@abacritt/angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,10 +17,11 @@ import { CodingComponent } from './components/coding/coding.component';
 import { SnippetComponent } from './components/snippet/snippet.component';
 import { ManagerComponent } from './components/manager/manager.component';
 import { AuthService } from './services/auth/auth.service';
-import { AngularFireModule  } from '@angular/fire/compat';
+import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { ApiService } from './services/apiService/api-service.service';
 
 @NgModule({
   declarations: [
@@ -38,9 +42,9 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp( environment.firebaseConfig ),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [AuthService],
-  bootstrap: [AppComponent]
+  providers: [AuthService, ApiService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { } 
+export class AppModule {}
