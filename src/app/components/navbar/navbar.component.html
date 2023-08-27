@@ -1,18 +1,18 @@
-<div class="navbar" style="display: block;">
-    <a routerLink="/" >
-        <img src="/assets/img/app/logo.svg" width="50px">
-    </a>
-    <ul style="margin: 0;" *ngIf="!isAuth">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/login">Login</a></li>
-        <li><a routerLink="/register">Register</a></li>
-        <li><a routerLink="/code">Code</a></li>
-    </ul>
-    <ul style="margin: 0;" *ngIf="isAuth">
-        <li><a routerLink="/">Home</a></li>
-        <li><a routerLink="/code">Code</a></li>
-        <li><a routerLink="/snip">Snip</a></li>
-        <li><a routerLink="/snip">Manager</a></li>
-        <li><button (click)="SignOut()">Sign out</button></li>
-    </ul>
+<div class="navbar" style="display: block">
+  <a routerLink="/">
+    <img src="/assets/img/app/logo.svg" width="50px" />
+  </a>
+  <ul style="margin: 0" *ngIf="!isAuth">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/register">Register</a></li>
+    <li><a routerLink="/code">Code</a></li>
+  </ul>
+  <ul style="margin: 0" *ngIf="isAuth">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/code">Code</a></li>
+    <li><a routerLink="/snip">Snip</a></li>
+    <li><a routerLink="/manager">Manager</a></li>
+    <li><button (click)="SignOut()">Sign out</button></li>
+  </ul>
 </div>
