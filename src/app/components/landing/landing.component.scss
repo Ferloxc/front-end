@@ -11,11 +11,10 @@ $color-secondary: #103436;
   background-color: $color-background;
   
   .landing-page__header {
-    background-color: #fff;
+    background-color: $color-background;
     color: #EEEEEE;
     text-align: center;
     padding: 50px 90px;
-    height: 420px;
     color: #00ADB5;
     text-align: right;
     display: flex;
