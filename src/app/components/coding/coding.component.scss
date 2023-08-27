@@ -11,6 +11,15 @@ body {
   color: $text-color;
 }
 
+.nameText{
+      border: 1px solid #ccc;
+      padding: 5px;
+      background-color: $primary-bg-color;
+      color: $text-color;
+      font-family: monospace;
+
+}
+
 .container-buttons {
   display: flex;
   justify-content: space-between;

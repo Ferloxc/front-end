@@ -8,8 +8,8 @@ $coding-container-button-hover-color: darken($coding-container-button-bg-color, 
   background-color: $coding-container-bg-color;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Cambio a flex-start */
-  align-items: flex-start; /* Cambio a flex-start */
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 20px;
   height: 100vh;
 }
@@ -17,7 +17,7 @@ $coding-container-button-hover-color: darken($coding-container-button-bg-color, 
 .action-buttons {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   margin-bottom: 20px;
 
   .view-projects-button {
@@ -61,13 +61,12 @@ $coding-container-button-hover-color: darken($coding-container-button-bg-color, 
       background-color: $coding-container-bg-color;
     }
 
-    textarea { /* Aumento del tamaño del textarea */
+    textarea {
       height: 200px;
       width: 90vw;
-
     }
 
-    .save-button {
+    .add-button {
       margin-top: 15px;
       padding: 8px 15px;
       background-color: $coding-container-button-bg-color;
@@ -79,6 +78,39 @@ $coding-container-button-hover-color: darken($coding-container-button-bg-color, 
 
       &:hover {
         background-color: $coding-container-button-hover-color;
+      }
+    }
+  }
+
+  .snippet-list {
+    h3 {
+      color: $coding-container-text-color;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      .snippet-item {
+        margin-top: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        background-color: $coding-container-bg-color;
+        color: $coding-container-text-color;
+
+        .language {
+          color: $coding-container-button-bg-color;
+          font-size: 1rem;
+          font-weight: bold;
+        }
+
+        .code {
+          white-space: pre-wrap;
+          font-size: 0.9rem;
+        }
       }
     }
   }
