@@ -22,6 +22,7 @@ import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { ApiService } from './services/apiService/api-service.service';
+import { UserConfigComponent } from './components/user-config/user-config.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ApiService } from './services/apiService/api-service.service';
     ManagerComponent,
     NavbarComponent,
     VerifyEmailComponent,
+    UserConfigComponent,
   ],
   imports: [
     BrowserModule,

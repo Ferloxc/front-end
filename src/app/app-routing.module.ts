@@ -8,11 +8,13 @@ import { SnippetComponent } from './components/snippet/snippet.component';
 import { ManagerComponent } from './components/manager/manager.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AuthGuard } from './guard/auth.guard';
+import { UserConfigComponent } from './components/user-config/user-config.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-    { path: 'login', component: LoginComponent },
+    { path: 'login', component: LoginComponent },   
     { path: 'register', component: RegisterComponent }, 
+    { path: 'user', component: UserConfigComponent },
     { path: 'code', component: CodingComponent }, 
     { path: 'snip', component: SnippetComponent },
     { path: 'manager', component: ManagerComponent, canActivate: [AuthGuard] }, 
