@@ -1,36 +1,48 @@
 $primary-bg-color: #393E46;
-$secondary-bg-color: #393E46;
 $accent-color: #00ADB5;
 $text-color: #EEEEEE;
-$button-hover-color: #103436;
 
 .navbar {
-    background-color: $primary-bg-color;
-    padding: 10px;
-  
+  background-color: $primary-bg-color;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    li {
+      margin-right: 20px;
+    }
+
     a {
       text-decoration: none;
       color: $text-color;
-      margin-right: 20px;
-    }
-  
-    ul {
-      list-style: none;
-      padding: 0;
-      display: inline-block;
-    }
-  
-    li {
-      display: inline;
-    }
+      transition: color 0.3s;
 
-    button {
-      background: #00ADB5;
-      color: white;
-      font-family: monospace;
-      border: none;
-      border-radius: 2px;
-      padding: 5px 10px;
+      &:hover {
+        color: $accent-color;
+      }
     }
   }
 
+  .sign-out-button {
+    background: $accent-color;
+    color: $text-color;
+    font-family: monospace;
+    border: none;
+    border-radius: 2px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+}

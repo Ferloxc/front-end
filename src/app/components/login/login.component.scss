@@ -1,20 +1,15 @@
-// styles.scss
-
-// Variables
 $primary-bg-color: #222831;
 $secondary-bg-color: #393E46;
 $accent-color: #00ADB5;
 $text-color: #EEEEEE;
-$button-hover-color: #103436;
 
-/* Estilos del formulario de inicio de sesión */
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 90%;
-  background-color: #fff;
+  background-color: $primary-bg-color;
 
   .formContainer {
     display: flex;
@@ -26,7 +21,6 @@ $button-hover-color: #103436;
     background-color: $secondary-bg-color;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    font-family: monospace;
 
     form {
       display: flex;
@@ -40,19 +34,16 @@ $button-hover-color: #103436;
 
     h2 {
       font-size: 32px;
-      font-weight: bold;
-      color: $accent-color;
-      font-family: monospace;
+      color: $text-color;
     }
 
     .form-group {
       display: flex;
       flex-direction: column;
-      width: 100;
+      width: 100%;
 
       label {
         font-size: 16px;
-        font-weight: bold;
         color: $text-color;
         margin-bottom: 10px;
       }
@@ -70,17 +61,16 @@ $button-hover-color: #103436;
 
     button {
       padding: 14px 28px;
-      background-color: #ffffff;
-      color: #00adb5;
+      background-color: $accent-color;
+      color: #ffffff;
       border: none;
       border-radius: 5px;
       font-size: 18px;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      font-family: monospace;
 
       &:hover {
-        background-color: #e9e9e9;
+        background-color: darken($accent-color, 10%);
       }
     }
   }
