@@ -14,11 +14,11 @@ const routes: Routes = [
   { path: '', component: LandingComponent },
     { path: 'login', component: LoginComponent },   
     { path: 'register', component: RegisterComponent }, 
-    { path: 'user', component: UserConfigComponent },
+    { path: 'user', component: UserConfigComponent, canActivate: [AuthGuard] },
     { path: 'code', component: CodingComponent }, 
-    { path: 'snip', component: SnippetComponent },
+    { path: 'snip', component: SnippetComponent, canActivate: [AuthGuard] },
     { path: 'manager', component: ManagerComponent, canActivate: [AuthGuard] }, 
-    { path: 'verify-email', component: VerifyEmailComponent }, 
+    { path: 'verify-email', component: VerifyEmailComponent, canActivate: [AuthGuard] }, 
 ];
 
 @NgModule({
