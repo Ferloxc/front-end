@@ -46,10 +46,11 @@ export class CodingComponent implements OnInit {
       this.IdProject = idProject;
       this.api.getProjectById(idProject).then((response) => {
         const { data } = response;
-        const { HtmlFile, CssFile, JsFile } = data;
+        const { HtmlFile, CssFile, JsFile, Name } = data;
         this.htmlCode = HtmlFile.FileData;
         this.cssCode = CssFile.FileData;
         this.jsCode = JsFile.FileData;
+        this.name = Name;
       });
     }
 
