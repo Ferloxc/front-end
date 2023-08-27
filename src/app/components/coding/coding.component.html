@@ -1,27 +1,30 @@
 <div class="container-buttons">
   <button class="run-button" (click)="Run()">Run</button>
+  <div class="right-buttons">
+    <button class="save-button" (click)="Save()">Save</button>
+    <button class="view-projects-button" (click)="ViewProjects()">Projects</button>
+  </div>
+</div>
+<div class="container">
+  <div class="box">
+    <label>HTML</label>
+    <textarea [(ngModel)]="htmlCode" placeholder="Enter HTML code here"></textarea>
+  </div>
+
+  <div class="box">
+    <label>CSS</label>
+    <textarea [(ngModel)]="cssCode" placeholder="Enter CSS code here"></textarea>
+  </div>
+
+  <div class="box">
+    <label>JavaScript</label>
+    <textarea [(ngModel)]="jsCode" placeholder="Enter JavaScript code here"></textarea>
+  </div>
 </div>
 
-<div class="container">
-    <div class="box">
-      <label>HTML</label>
-      <textarea [(ngModel)]="htmlCode"></textarea>
-    </div>
-  
-    <div class="box">
-      <label>CSS</label>
-      <textarea [(ngModel)]="cssCode"></textarea>
-    </div>
-  
-    <div class="box">
-      <label>JavaScript</label>
-      <textarea [(ngModel)]="jsCode"></textarea>
-    </div>
-</div>
-  
 <div class="preview-container">
-    <label>Preview</label>
-    <div class="preview">
-      <iframe [srcdoc]="getIframeContent()" sandbox="allow-scripts"></iframe>
-    </div>
+  <label>Preview</label>
+  <div class="preview">
+    <iframe [srcdoc]="getIframeContent()" sandbox="allow-scripts"></iframe>
+  </div>
 </div>

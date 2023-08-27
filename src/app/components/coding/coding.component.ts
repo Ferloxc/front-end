@@ -1,13 +1,14 @@
 import { Component,ViewEncapsulation  } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-coding',
   templateUrl: './coding.component.html',
   styleUrls: ['./coding.component.scss'],
   encapsulation: ViewEncapsulation.None
-
 })
+
 export class CodingComponent {
   htmlCode: string = '';
   cssCode: string = '';
@@ -28,8 +29,8 @@ export class CodingComponent {
 
   outputRun = "";
 
-  constructor(private sanitizer: DomSanitizer) {
-  }
+  constructor(private sanitizer: DomSanitizer, private router: Router) {}
+
 
   getIframeContent(): SafeHtml {
     const html = this.outputRun;
@@ -39,4 +40,17 @@ export class CodingComponent {
   Run() {
     this.outputRun = `<html><head><style>${this.cssCode}</style></head><body>${this.htmlCode}<script>${this.jsCode}</script></body></html>`;
   }
+
+  Save() {
+    console.log('HTML Code:', this.htmlCode);
+    console.log('CSS Code:', this.cssCode);
+    console.log('JavaScript Code:', this.jsCode);
+
+    alert('Códigos guardados exitosamente.');
+  }
+
+  ViewProjects() {
+    this.router.navigate(['/manager']); 
+  }
+
 }
