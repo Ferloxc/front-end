@@ -25,15 +25,29 @@ export class RegisterComponent {
   ) {}
 
   onSubmit() {
-    this.api
-      .getUser('64e6e15bf3431f010ae8e1fa')
-      .then((data) => console.log(data));
-    var singUpForm = this.singUpForm.value;
-    this.authService.SignUp(
-      singUpForm.email!,
-      singUpForm.password!,
-      singUpForm.firstName!,
-      singUpForm.lastName!
-    );
+    let singUpForm = this.singUpForm.value;
+    this.authService
+      .SignUp(
+        singUpForm.email!,
+        singUpForm.password!,
+        singUpForm.firstName!,
+        singUpForm.lastName!
+      )
+      .then((result) => {
+        if (result) {
+          const uid = result?.user?.uid;
+          const user = {
+            UserId: uid,
+            Email: singUpForm.email,
+            FirstName: singUpForm.firstName,
+            LastName: singUpForm.lastName,
+          };
+          this.api
+            .createUser(user)
+            .then((result) => console.log(result))
+            .catch((err) => console.log(err));
+        }
+        console.log('result', result);
+      });
   }
 }

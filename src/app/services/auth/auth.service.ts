@@ -72,17 +72,27 @@ export class AuthService {
       });
   }
 
-  SignUp(email: string, password: string, firstName: string, lastName: string) {
-    console.log(email, password);
-    return this.firebaseAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
+  async SignUp(
+    email: string,
+    password: string,
+    firstName: string,
+    lastName: string
+  ) {
+    // console.log(email, password);
+    let result = null;
+    try {
+      result = await this.firebaseAuth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      if (result) {
         this.SendVerificationMail();
         this.SetUserData(result.user, firstName, lastName);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+      }
+    } catch (err: any) {
+      window.alert(err.message);
+    }
+    return result;
   }
 
   SendVerificationMail() {

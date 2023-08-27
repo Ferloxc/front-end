@@ -26,6 +26,26 @@ export class ApiService {
     return this.get(`users/${idUser}`);
   }
 
+  createUser(payload: object): Promise<any> {
+    return this.post(`users`, payload);
+  }
+
+  updateUser(payload: object): Promise<any> {
+    return this.put(`users`, payload);
+  }
+
+  deleteUser(idUser: string): Promise<any> {
+    return this.get(`users/${idUser}`);
+  }
+
+  findUserById(idUser: string): Promise<any> {
+    return this.get(`users/${idUser}`);
+  }
+
+  findObjectById(idUser: any): Promise<any> {
+    return this.get(`users/${idUser}`);
+  }
+
   // Configuracion para consumir el API
   private async get(url: string, params?: object): Promise<any> {
     const response = await this.axiosClient.get(this.API_URL + url, {

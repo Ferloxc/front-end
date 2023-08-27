@@ -6,27 +6,22 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
   public isAuth: boolean = false;
 
-  constructor(
-    private authService: AuthService,
-    private router: Router
-  ) {
-    router.events.pipe(
-      filter(event => event instanceof NavigationEnd)  
-    ).subscribe((event) => {
-      this.authService.isAuthenticated().subscribe(res => {
-        this.isAuth = (res && res.uid && res?.emailVerified) ? true : false;
+  constructor(private authService: AuthService, private router: Router) {
+    router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.authService.isAuthenticated().subscribe((res) => {
+          this.isAuth = res && res.uid ? true : false;
+        });
       });
-    });
-    
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   SignOut() {
     this.authService.SignOut();
