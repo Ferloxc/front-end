@@ -4,200 +4,164 @@ $color-accent: #00ADB5;
 $color-text: #EEEEEE;
 $color-secondary: #103436;
 
-/* Estilos generales */
-body {
-  font-family: Arial, sans-serif;
+.landing-page {
+  font-family: 'Arial', sans-serif;
   color: $color-text;
-  margin: 0;
-  padding: 0;
+  padding: 20px;
   background-color: $color-background;
-}
-
-/* Estilos para la barra de navegación */
-.navbar {
-  background-color: $color-primary;
-  padding: 10px;
-
-  a {
-    text-decoration: none;
+  
+  .landing-page__header {
+    background-color: #fff;
+    color: #EEEEEE;
+    text-align: center;
+    padding: 50px 90px;
+    height: 420px;
+    color: #00ADB5;
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      font-family: monospace;
+      font-weight: 400;
+    }
+    
+    p {
+      font-size: 18px;
+      color: #797979;
+    }
+  }
+  
+  .landing-page__features {
+    background-color: $color-primary;
+    padding: 50px 0;
+    text-align: center;
+    
+    .features-title {
+      h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: $color-text;
+      }
+      
+      p {
+        font-size: 16px;
+        color: $color-text;
+        margin-bottom: 30px;
+      }
+    }
+    
+    .features-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Ajuste del tamaño de las columnas
+      grid-gap: 20px;
+      
+      .feature-card {
+        background-color: $color-background;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        color: $color-text;
+        
+        h3 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: $color-accent;
+        }
+        
+        p {
+          font-size: 16px;
+          color: $color-text;
+        }
+      }
+    }
+  }
+  
+  .landing-page__plans {
+    background-color: $color-accent;
     color: $color-text;
-    margin-right: 20px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-  }
-
-  li {
-    display: inline;
-  }
-}
-
-/* Estilos para el encabezado */
-.landing-page__header {
-  // background-color: $color-accent;
-  // color: $color-text;
-  // text-align: center;
-  // padding: 50px 0;
-
-  background-color: #fff;
-  color: #EEEEEE;
-  text-align: center;
-  padding: 50px 90px;
-  height: 420px;
-  color: #00ADB5;
-  text-align: right;
-  display: flex;
-  justify-content: end;
-  align-items: end;
-  align-content: stretch;
-  flex-wrap: wrap;
-  flex-direction: column;
-
-  h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    font-family: monospace;
-    font-weight: 400;
-  }
-
-  p {
-    // font-size: 18px;
-    // color: $color-text;
-
-    font-size: 18px;
-    color: #797979;
-  }
-}
-
-/* Estilos para la sección de características */
-.landing-page__features {
-  background-color: $color-primary;
-  padding: 50px 0;
-  text-align: center;
-
-  .features-title {
+    padding: 50px 0;
+    text-align: center;
+    
     h2 {
       font-size: 28px;
       margin-bottom: 20px;
       color: $color-text;
     }
-
-    p {
-      font-size: 16px;
-      color: $color-text;
-      margin-bottom: 30px;
+    
+    .plans-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      .plan-card {
+        background-color: $color-background;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 20px;
+        flex: 1;
+        max-width: 300px;
+        color: $color-text;
+        
+        h3 {
+          font-size: 24px;
+          margin-bottom: 10px;
+          color: $color-accent;
+        }
+        
+        p {
+          font-size: 16px;
+          color: $color-text;
+        }
+        
+        .plan-features {
+          list-style: none;
+          padding: 0;
+          margin-bottom: 20px;
+          color: $color-text;
+          
+          li {
+            font-size: 14px;
+            margin-bottom: 5px;
+          }
+        }
+        
+        .plan-price {
+          font-size: 28px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          color: $color-accent;
+        }
+        
+        .cta-button {
+          display: block;
+          background-color: $color-accent;
+          color: $color-text;
+          text-decoration: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+          
+          &:hover {
+            background-color: $color-primary;
+          }
+        }
+      }
     }
   }
-
-  .features-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-
-    .feature-card {
-      background-color: $color-background;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      color: $color-text;
-
-      h3 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: $color-accent;
-      }
-
-      p {
-        font-size: 16px;
-        color: $color-text; /* Cambiado a color de texto */
-      }
-    }
-  }
-}
-
-/* Estilos para la sección de planes de pago */
-.landing-page__plans {
-  background-color: $color-accent;
-  color: $color-text;
-  padding: 50px 0;
-  text-align: center;
-
-  h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
+  
+  footer {
+    background-color: $color-primary;
+    padding: 20px;
+    text-align: center;
     color: $color-text;
   }
-
-  .plans-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .plan-card {
-      background-color: $color-background;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      margin: 20px;
-      flex: 1;
-      max-width: 300px;
-      color: $color-text;
-
-      h3 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: $color-accent;
-      }
-
-      p {
-        font-size: 16px;
-        color: $color-text; /* Cambiado a color de texto */
-      }
-
-      .plan-features {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 20px;
-        color: $color-text; /* Cambiado a color de texto */
-
-        li {
-          font-size: 14px;
-          margin-bottom: 5px;
-        }
-      }
-
-      .plan-price {
-        font-size: 28px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: $color-accent;
-      }
-
-      .cta-button {
-        display: block;
-        background-color: $color-accent;
-        color: $color-text;
-        text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: $color-primary;
-        }
-      }
-    }
-  }
-}
-
-/* Estilos para el pie de página */
-footer {
-  background-color: $color-primary;
-  padding: 20px;
-  text-align: center;
-  color: $color-text;
 }
