@@ -1,10 +1,14 @@
 <div class="project-manager">
   <h2>Your Projects</h2>
   <div class="card-container">
-    <div class="project-card" *ngFor="let project of projects" (click)="openProject(project)">
+    <div
+      class="project-card"
+      *ngFor="let project of projects"
+      (click)="openProject(project)"
+    >
       <div class="card-content">
         <i class="fas fa-folder"></i>
-        <div class="project-name">{{ project.name }}</div>
+        <div class="project-name">{{ project.Name }}</div>
       </div>
     </div>
   </div>

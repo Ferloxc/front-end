@@ -49,13 +49,13 @@ export class AuthService {
       });
   }
 
-  userLoggued(): Promise<boolean> {
+  userLoggued(): Promise<any> {
     return new Promise(async (resolve, _rejects) => {
       await this.firebaseAuth.onAuthStateChanged((user) => {
         if (user) {
-          resolve(true);
+          resolve(user);
         } else {
-          resolve(false);
+          resolve(null);
         }
       });
     });
@@ -118,6 +118,12 @@ export class AuthService {
     return userRef.set(userData, {
       merge: true,
     });
+  }
+
+  getUserData() {
+    let user = JSON.parse(localStorage.getItem('user')!);
+    console.log(user);
+    return user;
   }
 
   isAuthenticated() {

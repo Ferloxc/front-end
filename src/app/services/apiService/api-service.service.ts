@@ -123,4 +123,8 @@ export class ApiService {
   getUserProjects(userId: string): Promise<any> {
     return this.get(`projects/${userId}`);
   }
+
+  getProjectById(ProjectId: string): Promise<any> {
+    return this.get(`projects/getById/${ProjectId}`);
+  }
 }
