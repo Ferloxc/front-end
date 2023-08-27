@@ -22,10 +22,11 @@ export class ApiService {
     });
   }
 
-  getUsers(): Promise<AxiosResponse> {
-    return this.get('todo/sup');
+  getUser(idUser: string): Promise<any> {
+    return this.get(`users/${idUser}`);
   }
 
+  // Configuracion para consumir el API
   private async get(url: string, params?: object): Promise<any> {
     const response = await this.axiosClient.get(this.API_URL + url, {
       params: params,
@@ -40,7 +41,7 @@ export class ApiService {
   private async post(
     url: string,
     payload: object,
-    params: object
+    params?: object
   ): Promise<any> {
     const response = await this.axiosClient.post(this.API_URL + url, payload, {
       params: params,
@@ -55,7 +56,7 @@ export class ApiService {
   private async put(
     url: string,
     payload: object,
-    params: object
+    params?: object
   ): Promise<any> {
     const response = await this.axiosClient.put(this.API_URL + url, payload, {
       params: params,
@@ -67,7 +68,7 @@ export class ApiService {
     }
   }
 
-  private async delete(url: string, params: object): Promise<any> {
+  private async delete(url: string, params?: object): Promise<any> {
     const response = await this.axiosClient.delete(this.API_URL + url, {
       params: params,
     });
