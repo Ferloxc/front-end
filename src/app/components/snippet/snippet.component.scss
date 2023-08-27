@@ -1,104 +1,115 @@
-$primary-bg-color: #222831;
-$accent-color: #00ADB5;
-$text-color: #EEEEEE;
+$coding-container-bg-color: #222831;
+$coding-container-text-color: #EEEEEE;
+$coding-container-button-bg-color: #00ADB5;
+$coding-container-button-text-color: #FFFFFF;
+$coding-container-button-hover-color: darken($coding-container-button-bg-color, 10%);
 
 .coding-container {
+  background-color: $coding-container-bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  height: 100vh;
+}
 
-  .navbar {
-    background-color: $primary-bg-color;
-    padding: 10px;
+.action-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
 
-    a {
-      text-decoration: none;
-      color: $text-color;
-      margin-right: 20px;
+  .view-projects-button {
+    padding: 8px 15px;
+    background-color: $coding-container-button-bg-color;
+    border: none;
+    color: $coding-container-button-text-color;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $coding-container-button-hover-color;
+    }
+  }
+}
+
+.coding-snippet {
+  background-color: $coding-container-bg-color;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+  .snippet-inputs {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 10px;
+      color: $coding-container-text-color;
+      font-size: 0.9rem;
+    }
+
+    input, textarea {
+      padding: 8px;
+      margin: 3px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: $coding-container-text-color;
+      background-color: $coding-container-bg-color;
+    }
+
+    textarea {
+      height: 200px;
+      width: 90vw;
+    }
+
+    .add-button {
+      margin-top: 15px;
+      padding: 8px 15px;
+      background-color: $coding-container-button-bg-color;
+      border: none;
+      color: $coding-container-button-text-color;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $coding-container-button-hover-color;
+      }
+    }
+  }
+
+  .snippet-list {
+    h3 {
+      color: $coding-container-text-color;
+      font-size: 1.2rem;
+      margin-top: 20px;
     }
 
     ul {
       list-style: none;
       padding: 0;
-      display: inline-block;
 
-      li {
-        display: inline;
-        margin-right: 10px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-  }
-
-  .coding-snippet {
-    padding: 20px;
-    background-color: $primary-bg-color;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-    .snippet-inputs {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 10px;
-
-      label {
-        margin-top: 5px;
-        color: $text-color;
-        font-size: 0.9rem;
-      }
-
-      select, textarea {
-        width: 100%;
-        padding: 8px;
-        margin: 3px 0;
+      .snippet-item {
+        margin-top: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
-        font-size: 0.9rem;
-      }
+        padding: 10px;
+        background-color: $coding-container-bg-color;
+        color: $coding-container-text-color;
 
-      button {
-        padding: 8px 15px;
-        background-color: $accent-color;
-        border: none;
-        color: #FFFFFF;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color: darken($accent-color, 10%);
+        .language {
+          color: $coding-container-button-bg-color;
+          font-size: 1rem;
+          font-weight: bold;
         }
-      }
-    }
 
-    .snippet-list {
-      h3 {
-        margin-top: 20px;
-        color: $text-color;
-        font-size: 1.2rem;
-      }
-
-      ul {
-        list-style: none;
-        padding: 0;
-        
-        .snippet-item {
-          margin-top: 20px;
-          border: 1px solid #ccc;
-          padding: 15px;
-          border-radius: 8px;
-          background-color: $primary-bg-color;
-          box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-
-          .language {
-            color: $accent-color;
-            font-weight: bold;
-            margin-bottom: 5px;
-          }
-
-          .code {
-            white-space: pre-wrap;
-            color: $text-color;
-          }
+        .code {
+          white-space: pre-wrap;
+          font-size: 0.9rem;
         }
       }
     }

@@ -6,20 +6,28 @@ import { LandingComponent } from './components/landing/landing.component';
 import { CodingComponent } from './components/coding/coding.component';
 import { SnippetComponent } from './components/snippet/snippet.component';
 import { ManagerComponent } from './components/manager/manager.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { AuthGuard } from './guard/auth.guard';
+import { UserConfigComponent } from './components/user-config/user-config.component';
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent }, 
-    { path: 'code', component: CodingComponent }, 
-    { path: 'snip', component: SnippetComponent },
-    { path: 'manager', component: ManagerComponent }, 
- 
-
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'user', component: UserConfigComponent, canActivate: [AuthGuard] },
+  { path: 'code', component: CodingComponent },
+  { path: 'code/:idProject', component: CodingComponent },
+  { path: 'snip', component: SnippetComponent, canActivate: [AuthGuard] },
+  { path: 'manager', component: ManagerComponent, canActivate: [AuthGuard] },
+  {
+    path: 'verify-email',
+    component: VerifyEmailComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

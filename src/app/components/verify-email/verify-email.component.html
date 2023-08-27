@@ -1,0 +1,18 @@
+<div class="verify-email-container">
+    <div class="container">
+        <h2>Thank You for Registering</h2>
+        <div class="formGroup" *ngIf="authService.userData as user">
+            <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+            <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+        </div>
+
+        <button type="button" (click)="authService.SendVerificationMail()">
+            Resend Verification Email
+        </button>
+
+        <div class="redirectToLogin">
+            <span>Go back to?<span class="redirect" (click)="redirectLogin()"> Sign in</span></span>
+        </div>
+    </div>
+</div>
+  

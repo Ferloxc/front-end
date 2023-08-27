@@ -1,0 +1,46 @@
+<div class="profile-settings">
+  <div class="profile-info">
+    <h2>Profile Information</h2>
+    <div class="info-group">
+      <label>Full Name:</label>
+      <span>{{ FirstName + " " + LastName }}</span>
+    </div>
+    <div class="info-group">
+      <label>Email:</label>
+      <span>{{ email }}</span>
+    </div>
+    <div class="info-group">
+      <label>Current Plan:</label>
+      <span>{{ currentPlan }}</span>
+    </div>
+    <button class="edit-button" (click)="toggleEditMode()">Edit</button>
+  </div>
+
+  <div class="edit-form" *ngIf="editMode">
+    <h2>Edit Profile Settings</h2>
+    <form [formGroup]="editForm" (ngSubmit)="onEditSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input
+          type="text"
+          id="firstName"
+          formControlName="firstName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" formControlName="lastName" required />
+      </div>
+      <!-- <div class="form-group">
+        <label for="plan">Plan:</label>
+        <select id="plan" formControlName="plan">
+          <option value="basic">Basic</option>
+          <option value="premium">Premium</option>
+          <option value="pro">Pro</option>
+        </select>
+      </div> -->
+      <button class="save-button" type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>

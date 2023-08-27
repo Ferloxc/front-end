@@ -1,39 +1,19 @@
-<div class="navbar">
-  <a routerLink="/">Logo</a>
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/register">Register</a></li>
-    <li><a routerLink="/code">Code</a></li>
-  </ul>
-</div>
-
 <!-- Formulario de inicio de sesión -->
 <div class="login-container" *ngIf="!loggedIn">
   <div class="formContainer">
-    <form>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
       <h2>Login</h2>
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username">
+        <input id="username" type="text" formControlName="username">
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password">
+        <input type="password" id="password" formControlName="password">
       </div>
-      <button type="submit">Login</button>
+      <button class="button" type="submit">Login</button>
     </form>
-    <button (click)="signInWithFB()" type="submit">Facebook</button>
   </div>
 </div>
 
 
-<div *ngIf="loggedIn">
-
-  <img src="{{ user.response.picture.data.url }}">
-<div>
-  <h4>{{ user.name }}</h4>
-  <p>{{ user.email }}</p>
-</div>
-
-
-</div>

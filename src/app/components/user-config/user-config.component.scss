@@ -1,0 +1,122 @@
+$primary-bg-color: #222831;
+$secondary-bg-color: #393E46;
+$accent-color: #00ADB5;
+$text-color: #EEEEEE;
+
+.profile-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-bg-color;
+  height: 100vh;  
+
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: $secondary-bg-color;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 360px;
+    padding: 30px;
+    margin: 20px;
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: $text-color;
+    }
+
+    .info-group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      label {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: $text-color;
+    }
+    
+    span {
+        font-style:italic;
+        font-family:'Times New Roman';
+        font-size: 16px;
+        color: $text-color;
+      }
+    }
+
+    .edit-button {
+      padding: 10px 20px;
+      background-color: $accent-color;
+      color: $text-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: $secondary-bg-color;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 360px;
+    padding: 30px;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: $text-color;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      label {
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: $text-color;
+      }
+
+      input, select {
+        padding: 10px;
+        border: 1px solid $text-color;
+        border-radius: 5px;
+        width: 100%;
+        font-size: 14px;
+        color: $text-color;
+        background-color: $secondary-bg-color;
+      }
+    }
+
+    .save-button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: $accent-color;
+      color: $text-color;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+}

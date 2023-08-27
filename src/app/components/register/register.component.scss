@@ -1,59 +1,34 @@
-// Variables
 $primary-bg-color: #222831;
 $secondary-bg-color: #393E46;
 $accent-color: #00ADB5;
 $text-color: #EEEEEE;
 $button-hover-color: #103436;
 
-//* Estilos para la barra de navegación */
-.navbar {
-  background-color: $primary-bg-color;
-  padding: 10px;
-
-  a {
-    text-decoration: none;
-    color: $text-color;
-    margin-right: 20px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-  }
-
-  li {
-    display: inline;
-  }
-}
-
-
-
 .register-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90%;
   background: $primary-bg-color;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
   width: 350px;
   padding: 30px;
   background-color: $secondary-bg-color;
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 360px;
 }
 
 h2 {
   font-size: 32px;
-  font-weight: bold;
-  color: $accent-color;
+  color: $text-color;
+  text-align: start;
 }
 
 .form-group {
@@ -64,18 +39,26 @@ h2 {
 
 label {
   font-size: 16px;
-  font-weight: bold;
   color: $text-color;
+  margin-bottom: 10px;
 }
 
 input {
   padding: 12px;
   border: 1px solid $text-color;
   border-radius: 5px;
-  width: 90%;
+  width: 100%;
   font-size: 16px;
   color: $text-color;
   background-color: $secondary-bg-color;
+}
+
+input {
+  color: $text-color;
+}
+
+::-ms-reveal {
+  filter: invert(100%);
 }
 
 button {
@@ -83,12 +66,12 @@ button {
   background-color: $accent-color;
   color: $text-color;
   border: none;
-  border-radius: 30px;
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
+  border-radius: 5px;
 
-button:hover {
-  background-color: $button-hover-color;
+  &:hover {
+    background-color: $button-hover-color;
+  }
 }

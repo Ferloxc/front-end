@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from '@abacritt/angularx-social-login';
 import { FacebookLoginProvider } from '@abacritt/angularx-social-login';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -13,6 +16,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CodingComponent } from './components/coding/coding.component';
 import { SnippetComponent } from './components/snippet/snippet.component';
 import { ManagerComponent } from './components/manager/manager.component';
+import { AuthService } from './services/auth/auth.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { ApiService } from './services/apiService/api-service.service';
+import { UserConfigComponent } from './components/user-config/user-config.component';
 
 @NgModule({
   declarations: [
@@ -23,31 +33,20 @@ import { ManagerComponent } from './components/manager/manager.component';
     CodingComponent,
     SnippetComponent,
     ManagerComponent,
+    NavbarComponent,
+    VerifyEmailComponent,
+    UserConfigComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
     BrowserAnimationsModule,
-    FormsModule 
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('2517977091689724')
-          }
-        ],
-        onError: (err) => {
-          console.error(err);
-        }
-      } as SocialAuthServiceConfig,
-    }
-  ],
-  bootstrap: [AppComponent]
+  providers: [AuthService, ApiService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { } 
+export class AppModule {}

@@ -1,67 +1,63 @@
 $primary-bg-color: #222831;
-$background-color: #171A1C; // Fondo más oscuro
-$text-color: #EEEEEE;
 $accent-color: #00ADB5;
-
-//* Estilos para la barra de navegación */
-.navbar {
-  background-color: $primary-bg-color;
-  padding: 10px;
-
-  a {
-    text-decoration: none;
-    color: $text-color;
-    margin-right: 20px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-  }
-
-  li {
-    display: inline;
-  }
-}
+$text-color: #EEEEEE;
+$card-bg-color: #30475E;
+$card-hover-bg-color: #425B76;
+$card-spacing: 20px;
+$card-width: 120px; 
+$card-aspect-ratio: 1.2;
 
 .project-manager {
   font-family: 'Arial', sans-serif;
   padding: 20px;
-  background-color: $background-color; // Cambio de fondo
+  background-color: $primary-bg-color;
 
   h2 {
     color: $accent-color;
     font-size: 1.5rem;
-    margin-bottom: 15px;
+    font-weight: bold;
+    margin: 0 0 15px;
+    text-align: center;
   }
 
-  .project-list {
-    list-style: none;
-    padding: 0;
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($card-width, 1fr));
+    gap: $card-spacing;
+    justify-content: center; 
+  }
 
-    li {
-      display: flex;
-      align-items: center;
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: $card-bg-color;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    width: $card-width;
+    height: calc(#{$card-width} * #{$card-aspect-ratio}); 
+
+    i {
+      margin-bottom: 5px;
+      color: $accent-color;
+      font-size: 1.5rem;
+    }
+
+    .project-name {
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    &:hover {
+      background-color: $card-hover-bg-color;
       color: $text-color;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-      padding: 10px;
-      border-radius: 5px;
-      background-color: $primary-bg-color; // Cambio de fondo
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); // Agregado de sombreado
-
-      i {
-        margin-right: 10px;
-        color: $accent-color;
-        font-size: 1.5rem;
-      }
-
-      &:hover {
-        background-color: darken($primary-bg-color, 10%); // Cambio en el color de hover
-        color: $text-color; // Cambio en el color de hover
-      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 interface Snippet {
   language: string;
@@ -11,19 +12,25 @@ interface Snippet {
   styleUrls: ['./snippet.component.scss']
 })
 export class SnippetComponent {
-  selectedLanguage: string = 'html';
-  snippetCode: string = '';
-  snippets: Snippet[] = [];
+  language: string = ''; 
+  code: string = ''; 
+  snippets: Snippet[] = []; 
+
+  constructor(private router: Router) {}
 
   addSnippet() {
-    if (this.snippetCode) {
+    if (this.code && this.language) {
       const newSnippet: Snippet = {
-        language: this.selectedLanguage,
-        code: this.snippetCode
+        language: this.language,
+        code: this.code
       };
-
       this.snippets.push(newSnippet);
-      this.snippetCode = '';
+      this.language = ''; 
+      this.code = '';
     }
+  }
+  
+  viewProjects() {
+    this.router.navigate(['/manager']);
   }
 }
