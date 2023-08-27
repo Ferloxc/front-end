@@ -8,7 +8,8 @@ export class ApiService {
   // private environment: string = "Local"
   private axiosClient: AxiosInstance;
   private errorHandler: ErrorHandler;
-  private API_URL: string = 'http://138.91.105.71/api_v1/';
+  private API_URL: string =
+    'https://code-render.eastus.cloudapp.azure.com/api_v1/';
   // private API_URL: string  = "localhost/api_v1/";
 
   constructor(errorHandler: ErrorHandler) {
